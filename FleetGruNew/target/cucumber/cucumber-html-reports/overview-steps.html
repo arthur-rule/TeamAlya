@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>No Name (add projectName to cucumber-reporting.properties)</td>
+      <td>03 Nov 2022, 18:07</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">com.FleetGruNew.step_definitions.Hooks.teardownScenario(io.cucumber.java.Scenario)</td>
+              <td>18</td>
+              <td class="duration" data-value="163067944">0.163</td>
+              <td class="duration" data-value="163067944">0.313</td>
+              <td class="duration" data-value="2935223000">2.935</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.FleetGruNew.step_definitions.LoginInvalid_stepdefinitions.user_should_see(java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="28574000">0.028</td>
+              <td class="duration" data-value="28574000">0.029</td>
+              <td class="duration" data-value="85722000">0.085</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.FleetGruNew.step_definitions.Login_stepdefinitions.user_clicks_login_button()</td>
+              <td>9</td>
+              <td class="duration" data-value="2175117666">2.175</td>
+              <td class="duration" data-value="2175117666">8.305</td>
+              <td class="duration" data-value="19576059000">19.576</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.FleetGruNew.step_definitions.Login_stepdefinitions.user_enters_to_password(java.lang.String)</td>
+              <td>15</td>
+              <td class="duration" data-value="52126333">0.052</td>
+              <td class="duration" data-value="52126333">0.066</td>
+              <td class="duration" data-value="781895000">0.781</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.FleetGruNew.step_definitions.Login_stepdefinitions.user_enters_to_username(java.lang.String)</td>
+              <td>15</td>
+              <td class="duration" data-value="43218000">0.043</td>
+              <td class="duration" data-value="43218000">0.048</td>
+              <td class="duration" data-value="648270000">0.648</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.FleetGruNew.step_definitions.Login_stepdefinitions.user_is_on_the_login_page()</td>
+              <td>18</td>
+              <td class="duration" data-value="3472311833">3.472</td>
+              <td class="duration" data-value="3472311833">12.392</td>
+              <td class="duration" data-value="62501613000">1:2.501</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.FleetGruNew.step_definitions.Login_stepdefinitions.user_should_see(java.lang.String)</td>
+              <td>6</td>
+              <td class="duration" data-value="23642833">0.023</td>
+              <td class="duration" data-value="23642833">0.025</td>
+              <td class="duration" data-value="141857000">0.141</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.FleetGruNew.step_definitions.ValidationMessage_stepdefinitions.userShouldSeeMessage(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="15549000">0.015</td>
+              <td class="duration" data-value="15549000">0.015</td>
+              <td class="duration" data-value="15549000">0.015</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.FleetGruNew.step_definitions.ValidationMessage_stepdefinitions.user_should_see_validation_message(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="16433500">0.016</td>
+              <td class="duration" data-value="16433500">0.017</td>
+              <td class="duration" data-value="32867000">0.032</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.FleetGruNew.step_definitions.bulletPassword_stepdefinitions.password_should_see_bullet_signs()</td>
+              <td>1</td>
+              <td class="duration" data-value="31520000">0.031</td>
+              <td class="duration" data-value="31520000">0.031</td>
+              <td class="duration" data-value="31520000">0.031</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.FleetGruNew.step_definitions.bulletPassword_stepdefinitions.user_enters_to_password(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="54860000">0.054</td>
+              <td class="duration" data-value="54860000">0.054</td>
+              <td class="duration" data-value="54860000">0.054</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.FleetGruNew.step_definitions.enterKeyLogin_stepdefinitions.user_press_the_enter_key()</td>
+              <td>6</td>
+              <td class="duration" data-value="3936937833">3.936</td>
+              <td class="duration" data-value="3936937833">12.787</td>
+              <td class="duration" data-value="23621627000">23.621</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.FleetGruNew.step_definitions.forgotPasswordLink_stepdefinitions.user_clicks_to_forgot_your_password_link()</td>
+              <td>1</td>
+              <td class="duration" data-value="713326000">0.713</td>
+              <td class="duration" data-value="713326000">0.713</td>
+              <td class="duration" data-value="713326000">0.713</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.FleetGruNew.step_definitions.forgotPasswordLink_stepdefinitions.user_should_see_page(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="33491000">0.033</td>
+              <td class="duration" data-value="33491000">0.033</td>
+              <td class="duration" data-value="33491000">0.033</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.FleetGruNew.step_definitions.profileMenu_stepdefinitions.user_should_see_own_username(java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="25277666">0.025</td>
+              <td class="duration" data-value="25277666">0.027</td>
+              <td class="duration" data-value="75833000">0.075</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.FleetGruNew.step_definitions.rememberMeLink_stepdefinitions.user_select_remember_me_checkbox()</td>
+              <td>1</td>
+              <td class="duration" data-value="46601000">0.046</td>
+              <td class="duration" data-value="46601000">0.046</td>
+              <td class="duration" data-value="46601000">0.046</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.FleetGruNew.step_definitions.rememberMeLink_stepdefinitions.user_should_see_clickable()</td>
+              <td>1</td>
+              <td class="duration" data-value="14088000">0.014</td>
+              <td class="duration" data-value="14088000">0.014</td>
+              <td class="duration" data-value="14088000">0.014</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.FleetGruNew.step_definitions.rememberMeLink_stepdefinitions.user_should_see_link(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="35432000">0.035</td>
+              <td class="duration" data-value="35432000">0.035</td>
+              <td class="duration" data-value="35432000">0.035</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>18</td>
+            <td>103</td>
+            <td class="duration">1.081</td>
+            <td class="duration">1:2.501</td>
+            <td class="duration">1:51.345</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
